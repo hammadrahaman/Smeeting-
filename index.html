@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#fffaf6">
 <title>A Little Time Together — Shavana</title>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 :root{
+  color-scheme: light;
   --ink:#342a32;--muted:#806c78;--rose:#a85f70;--dark:#7d4050;
   --cream:#fffaf6;--line:rgba(120,75,88,.18);--soft:#fff4f5
 }
 *{box-sizing:border-box}
 body{
   margin:0;min-height:100vh;color:var(--ink);
+  -webkit-text-size-adjust:100%;
   font-family:Georgia,"Times New Roman",serif;
   background:
     radial-gradient(circle at 10% 12%,#efd6dd80,transparent 30%),
@@ -101,6 +105,24 @@ textarea{min-height:95px;resize:vertical}
 .disclaimer{margin:24px auto 0;max-width:590px;font:12px/1.7 Arial,sans-serif;color:#9b8790}
 .signature{margin-top:35px;font-size:24px;font-style:italic;color:var(--dark)}
 .footer{margin-top:30px;font:12px/1.7 Arial,sans-serif;color:#9b8790}
+
+@media (prefers-color-scheme: dark){
+  html,body{background:#fffaf6!important;color:var(--ink)!important}
+  .card{background:#ffffffc4!important;color:var(--ink)!important}
+  .intro,.question p,.disclaimer,.footer{color:var(--muted)!important}
+  .message{color:var(--ink)!important}
+  input,textarea{background:#fff!important;color:var(--ink)!important}
+}
+@media (max-width:600px){
+  .wrap{width:94%;padding:22px 0 35px}
+  .card{padding:28px 20px;border-radius:24px}
+  h1{font-size:36px;line-height:1.12;margin:22px 0 18px}
+  .intro,.message{font-size:17px;line-height:1.75}
+  .question h2{font-size:29px}
+  .options{gap:10px}
+  button{width:100%;font-size:13px;padding:14px 16px}
+}
+
 </style>
 </head>
 <body>
